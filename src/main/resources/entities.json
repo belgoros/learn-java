@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "BatchStructuredLine": {
+        "number": "10",
+        "extension": "A",
+        "street": "Rue Royale",
+        "locality": "Tournaisis",
+        "postalCode": "7500",
+        "city": "Tournai"
+      }
+    },
+    {
+      "BatchStructuredLine": {
+        "number": "11",
+        "extension": "B",
+        "street": "Avenue Louise",
+        "locality": "Ixelles",
+        "postalCode": "1080",
+        "city": "Bruxelles"
+      }
+    }
+  ]
+}

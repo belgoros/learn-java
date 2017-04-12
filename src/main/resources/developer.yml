@@ -1,0 +1,9 @@
+!com.sca.basic.Developer
+firstName: Jean
+lastName: Dupont
+email: jd@example.com
+birthDate: 01/01/1980
+phoneNumbers:
+  - 069558978
+  - 0499361773
+  - 12345689

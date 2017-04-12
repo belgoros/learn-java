@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "BatchStructuredLine": {
+        "firstName": "John-0",
+        "lastName": "Ryse-0",
+        "email": "jr@example.com",
+        "birthdate": "20/02/2015"
+      }
+    },
+    {
+      "BatchStructuredLine": {
+        "firstName": "John-1",
+        "lastName": "Ryse-1",
+        "email": "jr@example.com",
+        "birthdate": "20/02/2015"
+      }
+    },
+    {
+      "BatchStructuredLine": {
+        "firstName": "John-2",
+        "lastName": "Ryse-2",
+        "email": "jr@example.com",
+        "birthdate": "20/02/2015"
+      }
+    }
+  ]
+}

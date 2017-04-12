@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <BatchStructuredLine>
+        <number>10</number>
+        <extension>A</extension>
+        <street>Rue Royale</street>
+        <locality>MyLocality</locality>
+        <postalCode>7500</postalCode>
+        <city>Tournai</city>
+    </BatchStructuredLine>
+    <BatchStructuredLine>
+        <number>11</number>
+        <extension>B</extension>
+        <street>Avenue Louise</street>
+        <locality>Ixelles</locality>
+        <postalCode>1080</postalCode>
+        <city>Bruxelles</city>
+    </BatchStructuredLine>
+</data>

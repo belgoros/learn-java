@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "developer": {
+        "firstName": "John",
+        "lastName": "Smith"
+      }
+    },
+    {
+      "developer": {
+        "firstName": "Mary",
+        "lastName": "Turner"
+      }
+    }
+  ]
+}

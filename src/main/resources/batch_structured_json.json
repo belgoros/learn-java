@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "number": "10",
+      "extension": "A",
+      "street": "Rue Royale",
+      "locality": "MyLocality",
+      "postalCode": "7500",
+      "city": "Tournai"
+    },
+    {
+      "number": "11",
+      "extension": "B",
+      "street": "Avenue Louise",
+      "locality": "Ixelles",
+      "postalCode": "1080",
+      "city": "Bruxelles"
+    }
+  ]
+}

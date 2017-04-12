@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <BatchStructuredLine>
+        <number>n-0</number>
+        <extension>ext-0</extension>
+        <street>street-0</street>
+        <locality>loc-0</locality>
+        <postalCode>1080</postalCode>
+        <city>city-0</city>
+    </BatchStructuredLine>
+    <BatchStructuredLine>
+        <number>n-1</number>
+        <extension>ext-1</extension>
+        <street>street-1</street>
+        <locality>loc-1</locality>
+        <postalCode>1081</postalCode>
+        <city>city-1</city>
+    </BatchStructuredLine>
+    <BatchStructuredLine>
+        <number>n-2</number>
+        <extension>ext-2</extension>
+        <street>street-2</street>
+        <locality>loc-2</locality>
+        <postalCode>1082</postalCode>
+        <city>city-2</city>
+    </BatchStructuredLine>
+    <BatchStructuredLine>
+        <number>n-3</number>
+        <extension>ext-3</extension>
+        <street>street-3</street>
+        <locality>loc-3</locality>
+        <postalCode>1083</postalCode>
+        <city>city-3</city>
+    </BatchStructuredLine>
+</data>
