@@ -1,3 +1,4 @@
+@ignore
 Feature: Example of Data Table use
   Scenario: Creating Developers
     Given the following developers:
