@@ -6,9 +6,6 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by serge-mac on 14/04/2017.
- */
 public class ApplyAtIngenicoSteps {
 
     private Person person;
@@ -41,35 +38,35 @@ public class ApplyAtIngenicoSteps {
         assertTrue(person.isTaken());
     }
 
-    class SergueiCambourPerson implements Person {
+    class SergueiCambourPerson extends Person {
 
-        private boolean isCVSent;
+        private boolean isCVsent;
 
         @Override
-        public boolean areInternationallyFocused() {
+        boolean areInternationallyFocused() {
             return true;
         }
 
         @Override
-        public boolean likesFinancialTechnology() {
+        boolean likesFinancialTechnology() {
             return true;
         }
 
         @Override
-        public void apply() {
-            this.isCVSent = true;
+        void apply() {
+            this.isCVsent = true;
         }
 
         @Override
-        public boolean isTaken() {
+        boolean isTaken() {
             return true;
         }
     }
 
-    interface Person {
-        boolean areInternationallyFocused();
-        boolean likesFinancialTechnology();
-        void apply();
-        boolean isTaken();
+    abstract class Person {
+        abstract boolean areInternationallyFocused();
+        abstract boolean likesFinancialTechnology();
+        abstract void apply();
+        abstract boolean isTaken();
     }
 }
