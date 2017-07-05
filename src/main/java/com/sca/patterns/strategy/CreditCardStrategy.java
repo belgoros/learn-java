@@ -4,13 +4,13 @@ public class CreditCardStrategy implements PaymentStrategy {
     private String name;
     private String cardNumber;
     private String cvv;
-    private String dateOfExpiry;
+    private String expiryDate;
 
-    public CreditCardStrategy(String nm, String ccNum, String cvv, String expiryDate) {
-        name = nm;
-        cardNumber = ccNum;
+    public CreditCardStrategy(String name, String cardNumber, String cvv, String expiryDate) {
+        this.name = name;
+        this.cardNumber = cardNumber;
         this.cvv = cvv;
-        dateOfExpiry = expiryDate;
+        this.expiryDate = expiryDate;
     }
 
     @Override
