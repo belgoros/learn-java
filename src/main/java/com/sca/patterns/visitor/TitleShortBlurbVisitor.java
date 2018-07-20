@@ -6,19 +6,18 @@ package com.sca.patterns.visitor;
 public class TitleShortBlurbVisitor extends TitleBlurbVisitor {
     @Override
     public void visit(BookInfo bookInfo) {
-        this.setTitleBlurb("SB-Book: " + bookInfo.getTitleName());
+        setTitleBlurb("SB-Book: " + bookInfo.getTitleName());
 
     }
 
     @Override
     public void visit(DvdInfo dvdInfo) {
-        this.setTitleBlurb("SB-DVD: " + dvdInfo.getTitleName());
+        setTitleBlurb("SB-DVD: " + dvdInfo.getTitleName());
 
     }
 
     @Override
     public void visit(GameInfo gameInfo) {
-        this.setTitleBlurb("SB-Game: " + gameInfo.getTitleName());
-
+        setTitleBlurb("SB-Game: " + gameInfo.getTitleName());
     }
 }

@@ -8,7 +8,8 @@ import java.util.Locale;
 public class LocaleExample {
 
     public static void main(String[] args) {
-        Locale locale = Locale.CANADA_FRENCH;
-        System.out.println(locale.getLanguage());
+        Locale locale = Locale.forLanguageTag("fr-FR");
+        System.out.println("Locale: " + locale);
+        System.out.println("country: " + locale.getCountry() + ", language: " + locale.getLanguage());
     }
 }

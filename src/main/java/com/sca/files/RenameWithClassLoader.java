@@ -8,14 +8,14 @@ import java.net.URL;
  */
 public class RenameWithClassLoader {
 
-	public static void main(final String[] args) {
-		RenameWithClassLoader runner = new RenameWithClassLoader();
+    public static void main(final String[] args) {
+        RenameWithClassLoader runner = new RenameWithClassLoader();
 
-		URL resource = runner.getClass().getResource("/entities.xml");
-		System.out.println(resource.getFile());
+        URL resource = runner.getClass().getResource("/entities.xml");
+        System.out.println(resource.getFile());
 
-		File file = new File(resource.getFile());
-		boolean resultat = file.renameTo(new File(file.getParent(), "toto_yoyo.xml"));
-		System.out.println("renamed: " + resultat);
-	}
+        File file = new File(resource.getFile());
+        boolean resultat = file.renameTo(new File(file.getParent(), "toto_yoyo.xml"));
+        System.out.println("renamed: " + resultat);
+    }
 }

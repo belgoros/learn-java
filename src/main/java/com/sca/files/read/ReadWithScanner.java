@@ -4,11 +4,11 @@
  */
 package com.sca.files.read;
 
+import com.sca.read_properties.PropertiesUtil;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-import com.sca.read_properties.PropertiesUtil;
 
 
 /**

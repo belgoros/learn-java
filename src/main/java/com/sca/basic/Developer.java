@@ -1,8 +1,11 @@
 package com.sca.basic;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import java.util.Date;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Developer {
 
     private String firstName;

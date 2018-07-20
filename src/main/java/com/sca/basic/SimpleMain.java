@@ -1,14 +1,17 @@
 package com.sca.basic;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 public class SimpleMain {
 
-    public static void main(String[] args) throws JsonProcessingException {
+
+    public static void main(String[] args) {
+        Boolean cond = false;
+
+        if (!Boolean.TRUE.equals(cond)) {
+            System.out.println("not true");
+        }
+        else {
+            System.out.println("true");
+        }
 
     }
 }

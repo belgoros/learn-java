@@ -1,11 +1,11 @@
 package com.sca.files.read;
 
+import com.sca.files.Folders;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
-import com.sca.files.Folders;
 
 /**
  * Created by ZFTC0418 on 09/03/2015.

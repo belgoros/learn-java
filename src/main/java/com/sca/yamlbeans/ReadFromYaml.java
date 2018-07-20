@@ -1,12 +1,12 @@
 package com.sca.yamlbeans;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
 import com.sca.basic.Developer;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 /**
  * Created by serguei_cambour on 10/12/2015.

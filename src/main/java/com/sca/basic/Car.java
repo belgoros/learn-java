@@ -5,9 +5,8 @@ public class Car extends Vehicle {
     private int wheels;
 
     @Override
-    void getWheels() {
-        System.out.println(wheels);
-
+    int getWheels() {
+        return wheels;
     }
 
     public void setWheels(int wheels) {
@@ -16,7 +15,13 @@ public class Car extends Vehicle {
 
     @Override
     void info() {
-        System.out.println("THis is a Car !");
+        System.out.println("This is a Car !");
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "wheels=" + wheels +
+                '}';
+    }
 }

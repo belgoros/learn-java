@@ -44,12 +44,16 @@
                 <executions>
                     <execution>
                         <id>compile</id>
-                        <goals> <goal>compile</goal> </goals>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
                     </execution>
 
                     <execution>
                         <id>test-compile</id>
-                        <goals> <goal>test-compile</goal> </goals>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -58,7 +62,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cukes.version>1.2.3</cukes.version>
-        <jackson-core-version>2.6.4</jackson-core-version>
+        <jackson-core-version>2.9.3</jackson-core-version>
         <es.version>2.1.0</es.version>
         <kotlin.version>1.0.2</kotlin.version>
     </properties>
@@ -118,7 +122,7 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.4.7</version>
+            <version>1.4.10</version>
         </dependency>
         <dependency>
             <groupId>com.google.inject</groupId>
@@ -210,6 +214,19 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>6.4.0</version>
+        </dependency>
+
+        <!-- Java properties reinvented by Owner. See http://owner.aeonbits.org/docs for more details -->
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>javalite-common</artifactId>
+            <version>1.4.13</version>
         </dependency>
 
     </dependencies>

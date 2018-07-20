@@ -20,10 +20,9 @@ public class CreateFile {
         File file = new File(fileName);
         try {
             boolean created = file.createNewFile();
-            if(created) {
+            if (created) {
                 System.out.println("File created at " + file.getAbsolutePath());
-            }
-            else {
+            } else {
                 System.out.println("File not created!");
             }
         } catch (IOException e) {

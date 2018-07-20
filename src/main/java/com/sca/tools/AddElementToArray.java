@@ -8,7 +8,7 @@ import org.apache.commons.lang3.ArrayUtils;
 public class AddElementToArray {
 
     public static void main(String[] args) {
-        String [] array = {"1", "2"};
+        String[] array = {"1", "2"};
         array = ArrayUtils.add(array, "3");
         array = ArrayUtils.add(array, "4");
 

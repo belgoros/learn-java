@@ -3,8 +3,8 @@ package com.sca.basic;
 public class Moto extends Vehicle {
 
     @Override
-    void getWheels() {
-        // TODO Auto-generated method stub
+    int getWheels() {
+        return 2;
 
     }
 

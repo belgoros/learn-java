@@ -3,8 +3,8 @@ package com.sca.basic;
 public class Truck extends Vehicle {
 
     @Override
-    void getWheels() {
-
+    int getWheels() {
+        return 6;
     }
 
     @Override

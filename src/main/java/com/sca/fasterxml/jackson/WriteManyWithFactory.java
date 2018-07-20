@@ -25,7 +25,7 @@ public class WriteManyWithFactory {
         jGenerator.writeFieldName("developers");
         List<Developer> developers = new ArrayList<>();
 
-        for(int i = 1; i<=5; i++) {
+        for (int i = 1; i <= 5; i++) {
             developers.add(createDeveloper(i));
         }
         jGenerator.writeObject(developers);

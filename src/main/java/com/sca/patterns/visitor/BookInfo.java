@@ -12,11 +12,11 @@ public class BookInfo extends AbstractTitleInfo {
     }
 
     public String getAuthor() {
-        return this.author;
+        return author;
     }
 
-    public void setAuthor(String authorIn) {
-        this.author = authorIn;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     @Override

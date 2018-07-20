@@ -1,9 +1,9 @@
 package com.sca.basic;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import org.apache.commons.lang3.StringUtils;
 
 public class JoinCollectionValues {
 

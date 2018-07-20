@@ -20,5 +20,4 @@ public class HollywoodServiceWithDI {
         List<Agent> friendlyAgents = filterAgents(agents, "Java Developers");
         return friendlyAgents;
     }
-
 }

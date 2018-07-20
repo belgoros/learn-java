@@ -1,19 +1,15 @@
 package com.sca.apache.poi;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+
+import java.io.*;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class RunPoiApp {
 
@@ -122,13 +118,13 @@ public class RunPoiApp {
                     Cell cell = cellIterator.next();
 
                     switch (cell.getCellType()) {
-                    case Cell.CELL_TYPE_NUMERIC:
-                        System.out.print((int) cell.getNumericCellValue()
-                                + "\t\t");
-                        break;
-                    case Cell.CELL_TYPE_STRING:
-                        System.out.print(cell.getStringCellValue() + "\t\t");
-                        break;
+                        case Cell.CELL_TYPE_NUMERIC:
+                            System.out.print((int) cell.getNumericCellValue()
+                                    + "\t\t");
+                            break;
+                        case Cell.CELL_TYPE_STRING:
+                            System.out.print(cell.getStringCellValue() + "\t\t");
+                            break;
                     }
                 }
                 System.out.println("");

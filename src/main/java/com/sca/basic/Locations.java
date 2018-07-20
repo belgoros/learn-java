@@ -8,6 +8,7 @@ public enum Locations {
     MOTO("moto", Moto.class), TRUCK("truck", Truck.class), CAR("car", Car.class), UKNOWN("UKNOWN", null);
 
     private static final Map<String, Locations> MAP_BY_KIND_VALUE = new HashMap<String, Locations>();
+
     /**
      * Initialization of the MAP_BY_CODE Map
      */
@@ -16,6 +17,7 @@ public enum Locations {
             MAP_BY_KIND_VALUE.put(vehicle.kind, vehicle);
         }
     }
+
     private final String kind;
     private final Class<? extends Vehicle> vehicle;
 

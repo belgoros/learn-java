@@ -73,7 +73,7 @@ public class RunElasticSearch {
     }
 
     public static void searchDocument(Client client, String index, String type,
-                                      String field, String value){
+                                      String field, String value) {
 
 
         SearchResponse response = client.prepareSearch(index)
@@ -89,7 +89,7 @@ public class RunElasticSearch {
         System.out.println("Current results: " + results.length);
         for (SearchHit hit : results) {
             System.out.println("------------------------------");
-            Map<String,Object> result = hit.getSource();
+            Map<String, Object> result = hit.getSource();
             System.out.println(result);
         }
 

@@ -1,13 +1,13 @@
 package com.sca.fasterxml.jackson;
 
-import java.io.File;
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.IOException;
 
 public class ReadJsonStream {
 
@@ -22,7 +22,7 @@ public class ReadJsonStream {
             JsonParser parser = jsonFactory.createParser(file);
             //JsonToken token;
             /*while ((token = parser.nextToken()) != null) {
-				switch (token) {
+                switch (token) {
 				case START_OBJECT:
 					JsonNode node = parser.readValueAsTree();
 					System.out.println("Read object: " + node.toString());

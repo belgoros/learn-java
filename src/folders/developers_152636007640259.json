@@ -1,1 +1,6 @@
-{"firstName":"John","lastName":"Pollac","email":"john.pollac@example.com","birthdate":1449655802405}
+{
+  "firstName": "John",
+  "lastName": "Pollac",
+  "email": "john.pollac@example.com",
+  "birthdate": 1449655802405
+}

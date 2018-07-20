@@ -1,23 +1,19 @@
 package com.sca.basic;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.Predicate;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
-
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-
-/**
- * Created by ZFTC0418 on 27/03/2015.
- */
 public class CollectionsExamples {
 
     public static void main(String[] args) {
         /*finLastElementWithGuava();
-		finLastElementWithApacheCommons();
+        finLastElementWithApacheCommons();
 		finLastElementWithPureJava();
 		collectionFilterExample();
 		filterWithRetain();*/
