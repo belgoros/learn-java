@@ -3,9 +3,6 @@ package com.sca.regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by serguei_cambour on 09/12/2015.
- */
 public class PlayWithRegex {
 
     public static void main(String[] args) {
