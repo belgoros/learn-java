@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+*.iml
+*.log
+*.pdf
+*.txt
+target/
+bin/
+build/
+classes/
+logs/
