@@ -25,8 +25,11 @@ public class RomanNumbers {
     }
 
     public static String intToRoman(int number) {
-        if (number >= 4000 || number <= 0)
+        if (number >= 4000 || number <= 0) {
+            System.err.println("Invalid number, up to 3999 are accepted only ");
             return null;
+        }
+
         StringBuilder result = new StringBuilder();
         for(Integer key : units.descendingKeySet()) {
             while (number >= key) {
@@ -38,6 +41,6 @@ public class RomanNumbers {
     }
 
     public static void main(String[] args) {
-        System.out.println(intToRoman(2019));
+        System.out.println(intToRoman(4000));
     }
 }
