@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sca.read_properties;
+package com.sca.properties;
 
 import java.io.*;
 import java.util.Properties;

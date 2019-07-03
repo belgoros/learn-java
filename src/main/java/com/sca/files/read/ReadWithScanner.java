@@ -4,7 +4,7 @@
  */
 package com.sca.files.read;
 
-import com.sca.read_properties.PropertiesUtil;
+import com.sca.properties.PropertiesUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
