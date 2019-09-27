@@ -1,8 +1,5 @@
 package com.sca.java8.optional;
 
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +20,11 @@ public class OptionalCar {
     }
 
     public static void main(String[] args) {
-        List<OptionalCar> cars = Arrays.asList(buildCar(StringUtils.EMPTY), buildCar("audi"));
+        List<OptionalCar> cars = null; //Arrays.asList(buildCar(StringUtils.EMPTY), buildCar("audi"));
 
+        Optional<List<OptionalCar>> optionalList = Optional.ofNullable(cars);
+
+        System.out.println("+++++++ " + optionalList.isPresent());
         Optional<OptionalCar> optionalCar = cars.stream().filter(car -> !car.getMark().isEmpty()).findFirst();
         optionalCar.ifPresent(OptionalCar::print);
     }
