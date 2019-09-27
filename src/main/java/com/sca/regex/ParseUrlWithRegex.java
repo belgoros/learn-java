@@ -56,7 +56,7 @@ public class ParseUrlWithRegex {
         System.out.println("Done for " + pages + "requests");
     }
 
-    private void processHeaderLink(String headerLink) {
+    public void processHeaderLink(String headerLink) {
         final String lastLink = extractLastLink(headerLink);
         parse(lastLink, PAGES_REGEX);
     }
