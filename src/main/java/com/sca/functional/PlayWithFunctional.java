@@ -27,7 +27,7 @@ public class PlayWithFunctional {
         Consumer<Integer> printAgeWithLamda = (age) -> System.out.println("Lamdda : age is " + age);
 
         //will work similar as printAgeConsumer
-        printAgeWithLamda.accept(223);//Lamda : age is 223
+        printAgeWithLamda.accept(223);//Lambda : age is 223
         //chaining with andThen(Consumer)
         printAgeConsumer //1st call
                 .andThen(printAgeWithLamda)//2nd call
@@ -89,8 +89,8 @@ public class PlayWithFunctional {
         BiFunction<Integer, Integer, String> areaWitMessage = (lengh, breadth) -> "Area is " + lengh * breadth;
         areaWitMessage.apply(4, 3);// Area is 12
         //chaining
-        areaOfRectangle // 1st area will be calulated
-                .andThen(area -> area * 3) // 2nd calulated area will be multiplied by 3 as height
+        areaOfRectangle // 1st area will be calculated
+                .andThen(area -> area * 3) // 2nd calculated area will be multiplied by 3 as height
                 .apply(2, 3);// 2 * 3 * 3 = 18
     }
 
