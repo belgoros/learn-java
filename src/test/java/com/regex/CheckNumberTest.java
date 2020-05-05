@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class CheckNumber {
+public class CheckNumberTest {
 
     @Test
     public void shouldTakeLastFiveDigits() {
@@ -20,12 +20,6 @@ public class CheckNumber {
         String regex = "(\\d{5}$)";
         Pattern p = Pattern.compile(regex);
         Matcher matcher = p.matcher(input);
-        boolean isMatched = matcher.matches();
-       if (matcher.find()) {
-           return true;
-       }
-
-       return false;
+        return matcher.matches();
     }
-
 }
