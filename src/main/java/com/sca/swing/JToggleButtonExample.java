@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class JToggleButtonExample extends JFrame implements ItemListener {
+public class JToggleButtonExample extends JFrame {
 
     private JToggleButton button;
 
@@ -29,15 +29,23 @@ public class JToggleButtonExample extends JFrame implements ItemListener {
     }
 
     private void setAction() {
-        button.addItemListener(this);
+        ItemListener itemListener = createButtonListener();
+        button.addItemListener(itemListener);
     }
 
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        if (button.isSelected()) {
-            button.setText("OFF");
-        } else {
-            button.setText("ON");
-        }
+    private ItemListener createButtonListener() {
+        ItemListener itemListener = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent event) {
+                int buttonState = event.getStateChange();
+                if (buttonState == ItemEvent.SELECTED) {
+                    button.setText("OFF");
+                } else {
+                    button.setText("ON");
+                }
+            }
+        };
+
+        return itemListener;
     }
 }
