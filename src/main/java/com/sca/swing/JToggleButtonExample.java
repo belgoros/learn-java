@@ -34,15 +34,12 @@ public class JToggleButtonExample extends JFrame {
     }
 
     private ItemListener createButtonListener() {
-        ItemListener itemListener = new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent event) {
-                int buttonState = event.getStateChange();
-                if (buttonState == ItemEvent.SELECTED) {
-                    button.setText("OFF");
-                } else {
-                    button.setText("ON");
-                }
+        ItemListener itemListener = event -> {
+            int buttonState = event.getStateChange();
+            if (buttonState == ItemEvent.SELECTED) {
+                button.setText("OFF");
+            } else {
+                button.setText("ON");
             }
         };
 
