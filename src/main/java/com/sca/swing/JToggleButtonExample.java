@@ -4,45 +4,60 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.net.URL;
 
 public class JToggleButtonExample extends JFrame {
 
     private JToggleButton button;
 
     public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(() -> createAndShowGUI());
+    }
+
+    private static void createAndShowGUI() {
         new JToggleButtonExample();
     }
 
     JToggleButtonExample() {
         setTitle("JToggleButton with ItemListener Example");
         setLayout(new FlowLayout());
-        setJToggleButton();
-        setAction();
+        initButton();
+        setButtonAction();
         setSize(300, 300);
+        pack();
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    private void setJToggleButton() {
-        button = new JToggleButton("ON");
+    private void initButton() {
+        button = new JToggleButton("OFF");
+        button.setIcon(getWarningIcon());
         add(button);
     }
 
-    private void setAction() {
-        ItemListener itemListener = createButtonListener();
-        button.addItemListener(itemListener);
+    private void setButtonAction() {
+        button.addItemListener(createButtonListener());
     }
 
     private ItemListener createButtonListener() {
         ItemListener itemListener = event -> {
             int buttonState = event.getStateChange();
             if (buttonState == ItemEvent.SELECTED) {
-                button.setText("OFF");
-            } else {
                 button.setText("ON");
+                button.setBorder(BorderFactory.createLoweredBevelBorder());
+
+            } else {
+                button.setText("OFF");
+                button.setBorder(BorderFactory.createRaisedBevelBorder());
             }
         };
 
         return itemListener;
+    }
+
+    private ImageIcon getWarningIcon() {
+        URL resource = getClass().getResource("/warning.png");
+
+        return new ImageIcon(resource);
     }
 }
