@@ -22,7 +22,7 @@ public class JToggleButtonExample extends JFrame {
         setTitle("JToggleButton with ItemListener Example");
         setLayout(new FlowLayout());
         initButton();
-        setButtonAction();
+        //setButtonAction();
         setSize(300, 300);
         pack();
         setVisible(true);
@@ -30,7 +30,7 @@ public class JToggleButtonExample extends JFrame {
     }
 
     private void initButton() {
-        button = new JToggleButton("OFF");
+        button = new MyCustomToggleButton("OFF");
         button.setIcon(getWarningIcon());
         add(button);
     }
