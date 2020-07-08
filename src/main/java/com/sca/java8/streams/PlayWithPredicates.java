@@ -31,6 +31,17 @@ public class PlayWithPredicates {
 
         List<Person> byAge = people.stream().filter(p1.or(p2)).collect(Collectors.toList());
         System.out.println("by age: " + byAge);
+
+        /**
+         * Example of a cumbersome Predicate use: Predicates are always true.
+         * So, to take the persons aged less than 10 years, we could just use:
+         * <code>
+         *     people.stream().filter(p -> p.getAge() < 10)
+         *     => []
+         * </code>
+         */
+        List<Person> weird = people.stream().filter(p -> p.getAge() < 10 ? true : false).collect(Collectors.toList());
+        System.out.println("weird: " + weird);
     }
 
     public static Stream<Person> filterPeople(List<Person> people, PersonPredicate predicate) {
