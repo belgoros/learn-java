@@ -15,9 +15,15 @@ import java.util.logging.Logger;
 public class Person {
 
     private int age;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private Properties properties;
+
+    public Person(int age, String firstName, String lastName) {
+        this.age = age;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public Person() {
         initProperies();
@@ -33,20 +39,20 @@ public class Person {
         }
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getAge() {
@@ -62,6 +68,15 @@ public class Person {
     }
 
     public String full_name() {
-        return firstname + " " + lastname;
+        return firstName + " " + lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }
