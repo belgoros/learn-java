@@ -8,23 +8,31 @@ public class MyCustomToggleButton extends JToggleButton implements ItemListener 
 
     public MyCustomToggleButton(String text) {
         super(text);
-        addItemListener(this);
         init();
     }
 
     private void init() {
-        setBorder(BorderFactory.createRaisedBevelBorder());
+        addItemListener(this);
+        setDeactivated();
     }
 
     @Override
     public void itemStateChanged(ItemEvent event) {
         int buttonState = event.getStateChange();
         if (buttonState == ItemEvent.SELECTED) {
-            setText("ON");
-            setBorder(BorderFactory.createLoweredBevelBorder());
+            setActivated();
         } else {
-            setText("OFF");
-            setBorder(BorderFactory.createRaisedBevelBorder());
+            setDeactivated();
         }
+    }
+
+    private void setDeactivated() {
+        setText("OFF");
+        setBorder(BorderFactory.createRaisedBevelBorder());
+    }
+
+    private void setActivated() {
+        setText("ON");
+        setBorder(BorderFactory.createLoweredBevelBorder());
     }
 }
