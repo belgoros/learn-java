@@ -11,6 +11,8 @@ public class MapToJsonConverter {
         Map<String, String> map = new HashMap<>();
         map.put("key", "value");
 
+        System.out.println("Map: " + map);
+
         ObjectMapper mapper = new ObjectMapper();
         String jsonResult = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
         System.out.println(jsonResult);
