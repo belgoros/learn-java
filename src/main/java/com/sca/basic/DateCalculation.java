@@ -7,7 +7,7 @@ import java.time.temporal.TemporalAdjusters;
 
 public class DateCalculation {
 
-    private LocalDate date;
+    private final LocalDate date;
 
     public DateCalculation(LocalDate date) {
         this.date = date;
