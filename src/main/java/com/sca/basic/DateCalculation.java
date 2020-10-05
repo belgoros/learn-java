@@ -18,7 +18,7 @@ public class DateCalculation {
     }
 
     public int getMonthFromDate() {
-        return getDate().getMonth().getValue();
+        return getDate().getMonthValue();
     }
 
     public int getYearFromDate() {
