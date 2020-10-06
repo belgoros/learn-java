@@ -1,9 +1,6 @@
 package com.sca.basic;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.Period;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
@@ -49,6 +46,26 @@ public class DateCalculation {
         // print days & months
         System.out.println("Months between " + pastDate + " and " + now + ": " + monthsValue);
         System.out.println("Days between " + pastDate + " and " + now + ": " + daysValue);
+
+        convertMillisToLocalDate();
+    }
+
+    private static void convertMillisToLocalDate() {
+        LocalDate now = LocalDate.now();
+        System.out.println("now: " + now);
+
+        String millisAsString = convertDateToMillisAsString(now);
+
+        long millis = Long.parseLong(millisAsString);
+
+        LocalDate ld = Instant.ofEpochMilli(millis).atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println("back to date: " + ld);
+        System.out.println("2 dates are equal: " + now.isEqual(ld));
+    }
+
+    private static String convertDateToMillisAsString(LocalDate _date) {
+        long millis = _date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+        return String.valueOf(millis);
     }
 
     public LocalDate getDate() {
