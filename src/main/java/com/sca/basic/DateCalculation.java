@@ -2,6 +2,7 @@ package com.sca.basic;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
@@ -37,6 +38,17 @@ public class DateCalculation {
 
         // print days
         System.out.println("Days between " + localDate1 + " and " + localDate2 + ": " + days);
+
+        LocalDate pastDate = LocalDate.of(2019, Month.AUGUST, 15);
+        LocalDate now = LocalDate.now();
+
+        // calculate difference
+        long monthsValue = ChronoUnit.MONTHS.between(pastDate, now);
+        long daysValue = ChronoUnit.DAYS.between(pastDate, now);
+
+        // print days & months
+        System.out.println("Months between " + pastDate + " and " + now + ": " + monthsValue);
+        System.out.println("Days between " + pastDate + " and " + now + ": " + daysValue);
     }
 
     public LocalDate getDate() {
