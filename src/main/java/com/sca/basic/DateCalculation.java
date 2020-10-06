@@ -2,6 +2,8 @@ package com.sca.basic;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
@@ -11,6 +13,30 @@ public class DateCalculation {
 
     public DateCalculation(LocalDate date) {
         this.date = date;
+    }
+
+    public static void main(String[] args) {
+        LocalDate from = LocalDate.now();
+        LocalDate to = from.plusDays(10);
+        System.out.println(" 10 days later: " + to);
+
+        long later = ChronoUnit.DAYS.between(from, to);
+        System.out.println(later);    // 10
+
+        LocalDate earlier = from.minusDays(10);
+        System.out.println("10 days earlier: " + earlier);
+
+        long diffEarlier = ChronoUnit.DAYS.between(earlier, from);
+        System.out.println(diffEarlier); // 10
+
+        LocalDate localDate1 = LocalDate.parse("2019-12-31");
+        LocalDate localDate2 = LocalDate.parse("2020-01-08");
+
+        // calculate difference
+        long days = Period.between(localDate1, localDate2).getDays();
+
+        // print days
+        System.out.println("Days between " + localDate1 + " and " + localDate2 + ": " + days);
     }
 
     public LocalDate getDate() {

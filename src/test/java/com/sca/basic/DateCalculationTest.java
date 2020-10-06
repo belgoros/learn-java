@@ -3,8 +3,7 @@ package com.sca.basic;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
+import java.time.*;
 
 import static org.junit.Assert.assertEquals;
 
