@@ -1,14 +1,17 @@
 package com.sca.fasterxml.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
 
 public class JsonPropertyExampleTest {
 
@@ -35,5 +38,17 @@ public class JsonPropertyExampleTest {
         System.out.println(bean);
         assertThat(bean.name, is(equalTo("Mary Parker")));
         assertThat(bean.personId, is(equalTo(231L)));
+    }
+
+    @Test
+    public void testKafkaJson() throws IOException {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(Objects.requireNonNull(classLoader.getResource("kafka.json")).getFile());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode rootNode = objectMapper.readTree(file);
+        JsonNode payload = rootNode.path("payload").path("after");
+        System.out.println("++++++= Display payload values ++++++++++++");
+        System.out.println("username: " + payload.path("username").asText());
     }
 }
