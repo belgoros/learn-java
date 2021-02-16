@@ -22,11 +22,11 @@ public class CollectionsExamples {
         examples.selectClients();
     }
 
-    private static void finLastElementWithGuava() {
+    /*private static void finLastElementWithGuava() {
         List<String> strings = Lists.newArrayList("one", "two", "three");
         String lastElement = Iterables.getLast(strings, null);
         System.out.println(lastElement);
-    }
+    }*/
 
     private static void finLastElementWithApacheCommons() {
         List<String> strings = Lists.newArrayList("one", "two", "three");
