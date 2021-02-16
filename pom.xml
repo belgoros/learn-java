@@ -7,7 +7,7 @@
     <groupId>com.sca</groupId>
     <artifactId>learn-java</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    
     <reporting>
         <plugins>
             <plugin>
@@ -38,7 +38,10 @@
             </plugin>
         </plugins>
     </build>
+
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cukes.version>1.2.3</cukes.version>
         <jackson-core-version>[2.9.9,)</jackson-core-version>
@@ -46,12 +49,15 @@
     </properties>
 
     <dependencies>
+        <!--In Java 11, JAXB has been removed from JDK
+        (together with other JEE related modules based on JEP 320) and we need to add it to the project
+        as a separate library
+        -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
