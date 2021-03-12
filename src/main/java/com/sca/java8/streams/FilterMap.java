@@ -40,6 +40,4 @@ public class FilterMap {
 
         return result;
     }
-
-
 }
