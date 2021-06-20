@@ -2,6 +2,10 @@ package com.sca.java8.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -34,6 +38,9 @@ public class SimpleFilterStream {
 
         List<Integer> personAges = getPersonAges(persons);
         System.out.println("ages: " + personAges.toString());
+
+        List<Person> distinctPersons = persons.stream().filter(distinctByKey(p -> p.getAge())).collect(Collectors.toList());
+        System.out.println(distinctPersons);
     }
 
     private static List<Person>  initPersonsList() {
@@ -68,5 +75,12 @@ public class SimpleFilterStream {
                     "age=" + age +
                     '}';
         }
+    }
+
+    public static <T> Predicate<T> distinctByKey(
+            Function<? super T, ?> keyExtractor) {
+
+        Map<Object, Boolean> seen = new ConcurrentHashMap<>();
+        return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }
 }
