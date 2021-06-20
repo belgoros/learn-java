@@ -79,5 +79,12 @@ public class CollectionsIntersection {
         public int hashCode() {
             return Objects.hash(text);
         }
+
+        @Override
+        public String toString() {
+            return "Comment{" +
+                    "text='" + text + '\'' +
+                    '}';
+        }
     }
 }
