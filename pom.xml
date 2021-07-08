@@ -25,7 +25,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cukes.version>1.2.3</cukes.version>
         <jackson-core-version>[2.9.9,)</jackson-core-version>
-        <es.version>6.8.13</es.version>
+        <es.version>6.8.15</es.version>
     </properties>
 
     <dependencies>
