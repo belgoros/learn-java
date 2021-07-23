@@ -1,0 +1,26 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd">
+
+    <mirrors>
+        <mirror>
+            <id>eclipse</id>
+            <name>eclipse</name>
+            <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+            <mirrorOf>jvnet-nexus-staging</mirrorOf>
+            <blocked>false</blocked>
+        </mirror>
+        <mirror>
+            <id>jvnet-nexus-staging</id>
+            <name>jvnet-nexus-staging</name>
+            <url>http://maven.java.net/content/repositories/staging/</url>
+            <mirrorOf>jvnet-nexus-staging</mirrorOf>
+            <blocked>false</blocked>
+        </mirror>
+        <mirror>
+            <id>jaspersoft-third-party-mirror</id>
+            <mirrorOf>jaspersoft-third-party</mirrorOf>
+            <url>http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/</url>
+            <blocked>false</blocked>
+        </mirror>
+    </mirrors>
+</settings>
