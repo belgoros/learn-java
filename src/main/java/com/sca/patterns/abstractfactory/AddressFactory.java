@@ -2,7 +2,7 @@ package com.sca.patterns.abstractfactory;
 
 
 public interface AddressFactory {
-    public Address createAddress();
+    Address createAddress();
 
-    public PhoneNumber createPhoneNumber();
+    PhoneNumber createPhoneNumber();
 }
