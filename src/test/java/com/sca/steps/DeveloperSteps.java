@@ -1,24 +1,37 @@
 package com.sca.steps;
 
 import com.sca.basic.Developer;
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Given;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.hu.De;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by serguei_cambour on 11/12/2015.
- */
 public class DeveloperSteps {
 
-    private List<Developer> developers = new ArrayList<>();
+    private List<Developer> developers;
+
+    @Before
+    public void setUp() {
+        developers = new ArrayList<>();
+    }
 
     @Given("^the following developers:$")
     public void theFollowingDevelopers(final DataTable dataTable) {
-        developers = dataTable.asList(Developer.class);
-        for (Developer developer : developers) {
-            System.out.println(developer.getFirstName() + " " + developer.getLastName());
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for (List<String> columns : rows) {
+            developers.add(createDeveloper(columns));
         }
+    }
+
+    private Developer createDeveloper(List<String> columns) {
+        Developer developer = new Developer();
+        developer.setFirstName(columns.get(0));
+        developer.setLastName(columns.get(1));
+        developer.setEmail(columns.get(2));
+
+        return developer;
     }
 }
