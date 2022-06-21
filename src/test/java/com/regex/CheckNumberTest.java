@@ -3,10 +3,13 @@ package com.regex;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -15,6 +18,7 @@ public class CheckNumberTest {
 
     private static final String NUMBER_REGEX = "\\A[-+]?\\d+(\\.\\d+)?";
     private static final String ZERO_REGEX = "\\A[-+]?0+([.,]0+)?";
+    public static final String NON_DIGIT_REGEX = "\\D+";
 
     @Test
     public void shouldTakeLastFiveDigits() {
@@ -53,6 +57,14 @@ public class CheckNumberTest {
     }
 
     @Test
+    public void shouldMatchNonDigit() {
+        List<String> nonNumerics = Arrays.asList("AZRTY", "$", "%€");
+        for (String nonNumeric : nonNumerics) {
+            assertThat(isNonDigit(nonNumeric)).isTrue();
+        }
+    }
+
+    @Test
     public void shouldMatchAZero() {
         String number = "0,00";
         Assert.assertTrue(isZero(number));
@@ -60,6 +72,10 @@ public class CheckNumberTest {
 
     private boolean isNumeric(String str) {
         return str.matches(NUMBER_REGEX);  //match a number with optional '-' and decimal.
+    }
+
+    private boolean isNonDigit(String str) {
+        return str.matches(NON_DIGIT_REGEX);  //match a number with optional '-' and decimal.
     }
 
     private boolean isZero(String str) {
