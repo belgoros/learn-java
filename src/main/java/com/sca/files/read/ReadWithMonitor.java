@@ -7,9 +7,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by ZFTC0418 on 02/04/2015.
- */
 public class ReadWithMonitor {
 
     public static void main(String[] args) throws IOException {
