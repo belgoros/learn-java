@@ -48,7 +48,7 @@ public enum CardVisual {
      * @param goalValue GOAL value
      * @param code      code to apply
      */
-    private CardVisual(final String goalValue, final String code) {
+    CardVisual(final String goalValue, final String code) {
         this.goalValue = goalValue;
         this.code = code;
     }
