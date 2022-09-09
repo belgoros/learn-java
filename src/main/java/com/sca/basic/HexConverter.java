@@ -1,6 +1,8 @@
 package com.sca.basic;
 
+import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /**
  * In a Spring Boot app, you can use <code>org.springframework.security.crypto.codec.Hex</code> class
@@ -24,6 +26,8 @@ public class HexConverter {
         HexConverter converter = new HexConverter("azerty");
         String hexString = converter.encodeHexString();
         System.out.println("converted to HEX: " + hexString);
+        System.out.println("Converting HEX to Base64 result:");
+        System.out.println(converter.hexToBase64("7465737420696E707574"));
     }
 
     public String encodeHexString() {
@@ -44,5 +48,12 @@ public class HexConverter {
         hexDigits[0] = Character.forDigit((num >> 4) & 0xF, 16);
         hexDigits[1] = Character.forDigit((num & 0xF), 16);
         return new String(hexDigits);
+    }
+
+    public String hexToBase64(String hexString) {
+        byte[] convertedHHexBytes = DatatypeConverter.parseHexBinary(hexString);
+        byte[] encodedBase64Bytes = Base64.getEncoder().encode(convertedHHexBytes);
+
+        return new String(encodedBase64Bytes);
     }
 }
