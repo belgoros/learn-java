@@ -193,7 +193,7 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.4.0</version>
+            <version>6.20.0</version>
         </dependency>
 
         <!-- Java properties reinvented by Owner. See http://owner.aeonbits.org/docs for more details -->
@@ -221,6 +221,20 @@
             <artifactId>gitlab4j-api</artifactId>
             <version>4.18.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.70</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
+            <version>1.70</version>
+        </dependency>
+
+
 
     </dependencies>
 </project>
