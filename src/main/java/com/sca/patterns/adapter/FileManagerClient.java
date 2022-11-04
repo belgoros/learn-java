@@ -8,7 +8,7 @@ public class FileManagerClient {
     public static void main(String[] args) {
         String dummyData = "dynamite";
         FileManager fileManager = new FileManagerImpl();
-        System.out.println("Using filemanager: " + fileManager.getClass().toString());
+        System.out.println("Using filemanager: " + fileManager.getClass());
         fileManager.open("dummyfile.dat");
         fileManager.write(0, dummyData.length(), dummyData.getBytes());
         String test = fileManager.read(0, dummyData.length(), dummyData.getBytes());

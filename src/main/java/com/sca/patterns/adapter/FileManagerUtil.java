@@ -2,8 +2,6 @@ package com.sca.patterns.adapter;
 
 public class FileManagerUtil {
 
-    // private RandomAccessFile f;
-
     public boolean openFile(String fileName) {
         System.out.println("Opening file: " + fileName);
         boolean success = true;
@@ -26,7 +24,6 @@ public class FileManagerUtil {
     public String readFromFile(long pos, long amount) {
         System.out.print("Reading " + amount + " chars from pos: " + pos
                 + " in file");
-        return new String("dynamite");
+        return "dynamite";
     }
-
 }
