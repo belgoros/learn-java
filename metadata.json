@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "providerData": {
+      "FPSFinance": [
+        {
+          "key": "docType",
+          "label": {
+            "en": "type of document en",
+            "fr": "type of document fr",
+            "nl": "type of document nl",
+            "de": "type of document de"
+          }
+        },
+        {
+          "key": " docTypeVersion",
+          "value": "1.0"
+        },
+        {
+          "key": "requester",
+          "value": "1234567"
+        },
+        {
+          "label": {
+            "fr": "string",
+            "nl": "string",
+            "de": "string"
+          }
+        },
+        {
+          "value": "string"
+        }
+      ]
+    }
+  }
+}
