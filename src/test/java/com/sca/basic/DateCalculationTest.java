@@ -1,10 +1,14 @@
 package com.sca.basic;
 
+import org.assertj.core.api.Assertions;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 public class DateCalculationTest {
@@ -48,5 +52,30 @@ public class DateCalculationTest {
     public void getCurrentWeekFirstDay() {
         LocalDate monday = LocalDate.of(2020, 9, 28);
         assertEquals(monday, dateCalculation.getCurrentWeekFirstDay());
+    }
+
+    @Test
+    public void testInstantToLocalDateTime() {
+        LocalDateTime localDateTime = DateCalculation.instantToLocalDateTime(buildInstant("2021-05-17T13:11:07.00Z"));
+        assertThat(localDateTime.getYear()).isEqualTo(2021);
+        assertThat(localDateTime.getMonthValue()).isEqualTo(5);
+        Assertions.assertThat(localDateTime.getDayOfMonth()).isEqualTo(17);
+    }
+
+    /**
+     *         String beforeTime = "2021-05-17T23:11:07.00Z";
+     *         String afterTime = "2022-05-17T23:11:07.048Z";
+     * @param timeAsString
+     * @return
+     */
+    private Instant buildInstant(String timeAsString) {
+        Instant parsedInstant = Instant.parse(timeAsString.trim());
+        /*DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern, Locale.US);
+        LocalDateTime localDateTime = LocalDateTime.parse(stringDate, dateTimeFormatter);
+        ZoneId zoneId = ZoneId.of("America/Chicago");
+        ZonedDateTime zonedDateTime = localDateTime.atZone(zoneId);
+        Instant instant = zonedDateTime.toInstant();*/
+
+        return parsedInstant;
     }
 }

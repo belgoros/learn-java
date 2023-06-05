@@ -5,6 +5,8 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
+import static java.util.Optional.ofNullable;
+
 public class DateCalculation {
 
     private final LocalDate date;
@@ -90,6 +92,11 @@ public class DateCalculation {
 
     public LocalDate getCurrentWeekFirstDay() {
         TemporalAdjuster previousMondayAdjuster = TemporalAdjusters.previous(DayOfWeek.MONDAY);
-        return  getDate().with(previousMondayAdjuster);
+        return getDate().with(previousMondayAdjuster);
+    }
+
+
+    public static LocalDateTime instantToLocalDateTime(Instant time) {
+        return ofNullable(time).map(instant -> LocalDateTime.ofInstant(instant, ZoneId.systemDefault())).orElse(LocalDateTime.now(ZoneId.systemDefault()));
     }
 }
