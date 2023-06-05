@@ -38,6 +38,9 @@ public class TimeCalculation {
     }
 
     private static void runLocalDateTimeExamples() {
+
+        LocalDateTime pastDate = LocalDateTime.now().minus(2, ChronoUnit.DAYS);
+        System.out.println("Two days ago was: " + pastDate );
         // create datetime instances
         LocalDateTime dateTime1 = LocalDateTime.parse("2018-08-02T15:14");
         LocalDateTime dateTime2 = LocalDateTime.parse("2019-02-14T12:45");
