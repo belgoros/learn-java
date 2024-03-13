@@ -12,10 +12,6 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class RunPoiApp {
-
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         String fileName = "myfile.xls";
         createExcelFile(fileName);
@@ -52,7 +48,7 @@ public class RunPoiApp {
         }
 
         try {
-            FileOutputStream out = new FileOutputStream(new File(fileName));
+            FileOutputStream out = new FileOutputStream(fileName);
             workbook.write(out);
             workbook.close();
             out.close();
@@ -67,7 +63,7 @@ public class RunPoiApp {
 
     private static void updateExcelFile(String fileName) {
         try {
-            FileInputStream file = new FileInputStream(new File(fileName));
+            FileInputStream file = new FileInputStream(fileName);
 
             HSSFWorkbook workbook = new HSSFWorkbook(file);
             HSSFSheet sheet = workbook.getSheetAt(0);
@@ -83,7 +79,7 @@ public class RunPoiApp {
 
             file.close();
 
-            FileOutputStream outFile = new FileOutputStream(new File(fileName));
+            FileOutputStream outFile = new FileOutputStream(fileName);
             workbook.write(outFile);
             workbook.close();
             outFile.close();
@@ -98,7 +94,7 @@ public class RunPoiApp {
     private static void readExcelFile(String fileName) {
         try {
 
-            FileInputStream file = new FileInputStream(new File(fileName));
+            FileInputStream file = new FileInputStream(fileName);
 
             // Get the workbook instance for XLS file
             HSSFWorkbook workbook = new HSSFWorkbook(file);
