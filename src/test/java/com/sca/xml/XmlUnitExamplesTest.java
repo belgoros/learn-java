@@ -35,7 +35,7 @@ public class XmlUnitExamplesTest {
     }
 
     @Test
-    public void given2XMLS_whenGeneratesDifferences_thenCorrect(){
+    public void given2XMLS_whenGeneratesDifferences_thenCorrect() {
         String controlXml = "<struct><int>3</int><boolean>false</boolean></struct>";
         String testXml = "<struct><boolean>false</boolean><int>3</int></struct>";
         Diff myDiff = DiffBuilder.compare(controlXml).withTest(testXml).build();
@@ -50,7 +50,7 @@ public class XmlUnitExamplesTest {
     }
 
     @Test
-    public void given2XMLS_whenGeneratesOneDifference_thenCorrect(){
+    public void given2XMLS_whenGeneratesOneDifference_thenCorrect() {
         String myControlXML = "<struct><int>3</int><boolean>false</boolean></struct>";
         String myTestXML = "<struct><boolean>false</boolean><int>3</int></struct>";
 
@@ -83,7 +83,7 @@ public class XmlUnitExamplesTest {
         String controlXml = "<struct><int>3</int><boolean>false</boolean></struct>";
         String testXml = "<struct><int>3</int><boolean>false</boolean></struct>";
 
-        assertThat(Input.fromString(testXml),isSimilarTo(Input.fromString(controlXml)));
+        assertThat(Input.fromString(testXml), isSimilarTo(Input.fromString(controlXml)));
     }
 
     @Test
@@ -136,7 +136,7 @@ public class XmlUnitExamplesTest {
     }
 
     @Test
-    public void given2XMLsWithDifferences_whenTestsDifferentWithoutDifferenceEvaluator_thenCorrect(){
+    public void given2XMLsWithDifferences_whenTestsDifferentWithoutDifferenceEvaluator_thenCorrect() {
         final String control = "<a><b attr=\"abc\"></b></a>";
         final String test = "<a><b attr=\"xyz\"></b></a>";
         Diff myDiff = DiffBuilder.compare(control).withTest(test)
@@ -156,8 +156,9 @@ public class XmlUnitExamplesTest {
         assertFalse(myDiff.toString(), myDiff.hasDifferences());
     }
 
-    public class IgnoreAttributeDifferenceEvaluator implements DifferenceEvaluator {
-        private String attributeName;
+    public static class IgnoreAttributeDifferenceEvaluator implements DifferenceEvaluator {
+        private final String attributeName;
+
         public IgnoreAttributeDifferenceEvaluator(String attributeName) {
             this.attributeName = attributeName;
         }
