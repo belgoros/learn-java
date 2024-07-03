@@ -26,11 +26,11 @@ public class Person {
     }
 
     public Person() {
-        initProperies();
+        initProperties();
         System.out.println("Got system properties: " + properties.getProperty("host"));
     }
 
-    private void initProperies() {
+    private void initProperties() {
         properties = new Properties();
         try {
             properties.load(getClass().getResourceAsStream("/app.properties"));
