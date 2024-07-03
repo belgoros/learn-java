@@ -177,4 +177,25 @@ public class XmlUnitExamplesTest {
             return outcome;
         }
     }
+
+    @Test
+    public void testXmlContentWithTabulationAndSpaces() {
+        String controlXml = "<root>\n    <child>Value</child>\n</root>";
+        String testXml = "<root><child>Value</child></root>";
+
+        // Build the Diff object
+        Diff diff = DiffBuilder.compare(controlXml)
+                .withTest(testXml)
+                .ignoreWhitespace()
+                .withNodeMatcher(new DefaultNodeMatcher(ElementSelectors.byNameAndText))
+                .build();
+
+        // Check if there are differences
+        if (diff.hasDifferences()) {
+            System.out.println("XML files are different.");
+            diff.getDifferences().forEach(System.out::println);
+        } else {
+            System.out.println("XML files are similar.");
+        }
+    }
 }
