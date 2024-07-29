@@ -12,6 +12,7 @@ import static uk.org.webcompere.modelassert.json.JsonAssertions.assertJson;
 import static uk.org.webcompere.modelassert.json.PathWildCard.ANY;
 import static uk.org.webcompere.modelassert.json.PathWildCard.ANY_SUBTREE;
 import static uk.org.webcompere.modelassert.json.Patterns.GUID_PATTERN;
+import static uk.org.webcompere.modelassert.json.condition.ConditionList.conditions;
 
 public class ModelAssertJsonTest {
 
@@ -146,6 +147,26 @@ public class ModelAssertJsonTest {
                 .where()
                 .path(ANY_SUBTREE, "id").matches(GUID_PATTERN)
                 .isEqualTo(expectedJson);
+    }
+
+    @Test
+    public void shouldTestNestedData() {
+        String actualJson = loadFile("nested_data.json");
+        assertJson(actualJson).at("/level1/level2/items")
+                .isArrayContainingExactlyInAnyOrder(conditions()
+                        .satisfies(conditions()
+                                .at("/id").isNumberEqualTo(1)
+                                .at("/name").hasValue("item1")
+                        )
+                        .satisfies(conditions()
+                                .at("/id").isNumberEqualTo(2)
+                                .at("/name").hasValue("item2")
+                        )
+                        .satisfies(conditions()
+                                .at("/id").isNumberEqualTo(3)
+                                .at("/name").hasValue("item3")
+                        )
+                );
     }
 
 
