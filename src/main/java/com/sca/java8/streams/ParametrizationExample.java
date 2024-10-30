@@ -26,7 +26,7 @@ public class ParametrizationExample {
             System.out.println(filteredApple);
         }
 
-        List<Apple> lst = Arrays.asList(new Apple("yellow", 200));
+        List<Apple> lst = List.of(new Apple("yellow", 200));
         List<Apple> yellowApples = filter(lst, (Apple a) -> a.getColor().equals("yellow"));
         for (Apple apple : yellowApples) {
             System.out.println("yellow apple: " + apple);
