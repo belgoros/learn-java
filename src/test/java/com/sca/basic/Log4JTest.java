@@ -1,4 +1,4 @@
-package com.sca.learningtests;
+package com.sca.basic;
 
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Logger;
