@@ -277,5 +277,21 @@
             <scope>test</scope>
         </dependency>
 
+
+
+        <!-- Tess4J, a JNA Wrapper for tesseract -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>4.5.5</version>
+        </dependency>
+
+
     </dependencies>
 </project>
