@@ -16,9 +16,10 @@ public class JsonUnitExampleTest {
                 .isObject().containsValue(json("{\"c\" :\"${json-unit.any-number}\"}"));
 
         // AssertJ string assertion
-        assertThatJson("{\n" +
-                "    \"a\": \"value\"\n" +
-                "}")
+        assertThatJson("""
+                {
+                    "a": "value"
+                }""")
                 .node("a").isString().isEqualTo("value");
 
         // AssertJ array assertion
@@ -31,28 +32,31 @@ public class JsonUnitExampleTest {
                 .isEqualTo(json("[{\"c\": 1}, {\"b\": 1} ,{\"d\": 1}]"));
 
         // JsonPath support
-        String json = "{\n" +
-                "    \"store\": {\n" +
-                "        \"book\": [\n" +
-                "            {\n" +
-                "                \"category\": \"reference\",\n" +
-                "                \"author\": \"Nigel Rees\",\n" +
-                "                \"title\": \"Sayings of the Century\",\n" +
-                "                \"price\": 8.96\n" +
-                "            }\n" +
-                "        ]\n" +
-                "    }\n" +
-                "}";
+        String json = """
+                {
+                    "store": {
+                        "book": [
+                            {
+                                "category": "reference",
+                                "author": "Nigel Rees",
+                                "title": "Sayings of the Century",
+                                "price": 8.96
+                            }
+                        ]
+                    }
+                }""";
         assertThatJson(json)
                 .inPath("$.store.book")
                 .isArray()
                 .contains(json(
-                        "            {\n" +
-                                "                \"category\": \"reference\",\n" +
-                                "                \"author\": \"Nigel Rees\",\n" +
-                                "                \"title\": \"Sayings of the Century\",\n" +
-                                "                \"price\": 8.96\n" +
-                                "            }"
+                        """
+                                            {
+                                                "category": "reference",
+                                                "author": "Nigel Rees",
+                                                "title": "Sayings of the Century",
+                                                "price": 8.96
+                                            }\
+                                """
                 ));
 
 
