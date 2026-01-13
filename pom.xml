@@ -207,7 +207,8 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.20.0</version>
+            <version>7.0.3</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Java properties reinvented by Owner. See http://owner.aeonbits.org/docs for more details -->
