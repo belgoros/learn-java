@@ -9,11 +9,7 @@ public class LoopWorkerSolution {
         LoopWorker worker = new LoopWorker("Worker-1");
         worker.start();
 
-        try {
-            Thread.sleep(2000); // Simulate some work in the main thread
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        ThreadSleepUtil.safeSleepWithoutThrow(2000);
 
         worker.stopAsync();
     }
@@ -25,7 +21,6 @@ public class LoopWorkerSolution {
         public LoopWorker(String name) {
             internalWorker = new Thread(this::doWorkLoop, name);
         }
-
 
         public void start() {
             logger.info("Starting worker: {}", internalWorker.getName());
