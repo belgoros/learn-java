@@ -3,17 +3,18 @@ package com.sca.concurrency;
 public class UnsafeCounter implements Counter {
     private long count;
 
-    public UnsafeCounter(long count) {
-        this.count = count;
-    }
-
     @Override
-    public void inc() {
+    public void increment() {
         count++;
     }
 
     @Override
-    public long value() {
+    public void incrementBy(long delta) {
+        count += delta;
+    }
+
+    @Override
+    public long getCount() {
         return count;
     }
 }

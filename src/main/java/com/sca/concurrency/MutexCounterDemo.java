@@ -9,12 +9,12 @@ public class MutexCounterDemo {
     }
 
     private static void runRace(int threads, int itersPerThread) {
-        var counter = new SynchronizedCounter(0);
+        var counter = new SynchronizedCounter();
         List<Thread> threadsList = new ArrayList<>();
         for (int i = 0; i < threads; i++) {
             Thread thread = new Thread(() -> {
                 for (int j = 0; j < itersPerThread; j++) {
-                    counter.inc();
+                    counter.increment();
                 }
             });
             threadsList.add(thread);
@@ -30,6 +30,6 @@ public class MutexCounterDemo {
         });
 
         int expected = threads * itersPerThread;
-        System.out.println("Expected: " + expected + ", Actual: " + counter.value());
+        System.out.println("Expected: " + expected + ", Actual: " + counter.getCount());
     }
 }

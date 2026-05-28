@@ -1,29 +1,26 @@
 package com.sca.concurrency;
 
-import org.slf4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 public class StartVsRunDemo {
-
-    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(StartVsRunDemo.class);
 
     public static void main(String[] args) {
         var inheritedTask = new InheritedTask("inherited-thread");
         var runnable = new RunnableTask("runnable-task");
         var runnableTask = new Thread(runnable);
 
-        var lambdaTask = new Thread(() -> {
-            ThreadSleepUtil.safeSleepWithoutThrow(1_000);
-        }, "lambda-thread");
+        var lambdaTask = new Thread(() -> ThreadSleepUtil.safeSleepWithoutThrow(1_000), "lambda-thread");
 
         executeWithStart(List.of(inheritedTask, runnableTask, lambdaTask));
         executeWithRun(List.of(inheritedTask, runnableTask, lambdaTask));
     }
 
     private static void executeWithRun(List<Thread> threads) {
-        logger.info("Executing tasks with Run......");
+        log.info("Executing tasks with Run......");
         for (Thread thread : threads) {
             ThreadSleepUtil.safeSleepWithoutThrow(10_000);
             thread.run();
@@ -32,7 +29,7 @@ public class StartVsRunDemo {
     }
 
     private static void executeWithStart(List<Thread> threads) {
-        logger.info("Executing tasks with Start......");
+        log.info("Executing tasks with Start......");
         for (Thread thread : threads) {
             ThreadSleepUtil.safeSleepWithoutThrow(10_000);
             thread.start();
@@ -60,6 +57,6 @@ public class StartVsRunDemo {
     }
 
     private static void logWorkingThread(String workerName, Thread.State state) {
-        logger.info("Working at: {}, Running in thread: {}, in state: {}", LocalDateTime.now(), workerName, state);
+        log.info("Working at: {}, Running in thread: {}, in state: {}", LocalDateTime.now(), workerName, state);
     }
 }
