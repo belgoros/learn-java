@@ -8,8 +8,13 @@ public class StreamExample {
         System.out.println(sum(list));
     }
 
+    /**
+     * Sum of squares of odd numbers
+     * @param list integer numbers list
+     * @return sum of squares of odd numbers
+     */
     private static int sum(List<Integer> list) {
-        // сумма квадратов нечётных чисел
+        // sum of squares of odd numbers
         return list.stream()
                 .filter(i -> i % 2 != 0)
                 .map(i -> i * i)
